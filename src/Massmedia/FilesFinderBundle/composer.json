@@ -1,0 +1,15 @@
+{
+    "name": "massmedia/massmedia.file_by_content_bundle",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "psr-4": { "Massmedia\\FilesFinderBundle\\": "" }
+        }
+    },
+    "require": {
+        "php": ">=5.3.9",
+        "symfony/framework-bundle": "~2.3|~3.0",
+        "symfony/console": "~2.1|~3.0"
+
+    }
+}

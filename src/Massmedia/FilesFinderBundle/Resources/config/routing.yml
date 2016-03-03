@@ -1,0 +1,3 @@
+files_finder_search:
+    path:     /search
+    defaults: { _controller: FilesFinderBundle:Search:index }
