@@ -17,7 +17,7 @@ class SearchController extends Controller
     {
         $form = $this->createFormBuilder()
             ->setAction($this->generateUrl('files_finder_search'))
-            ->add('search', 'text', array('label' => false))
+            ->add('search', 'text', ['label' => false])
             ->add('doSearch', 'submit')
             ->getForm();
 
@@ -25,7 +25,7 @@ class SearchController extends Controller
         $form->submit($request);
         if ($form->isValid()) {
             $search = $form->getData()['search'];
-            $finder = $this->get('massmedia.file_by_content');
+            $finder = $this->get('massmedia.files_finder');
             $userFiles = $this->get('kernel')->getRootDir() . '/../web/user_files';
             $founded = $finder->search($userFiles, $search);
         }

@@ -50,7 +50,7 @@ class FilesFinderServiceTest extends KernelTestCase
         $this->tmpDir = __DIR__ . '/../tmp';
 
         $container = self::$kernel->getContainer();
-        $this->filesFinder = $container->get('massmedia.file_by_content');
+        $this->filesFinder = $container->get('massmedia.files_finder');
 
         // Generate test files. Each file contain unique text phrase
         for ($i = 1; $i <= $this->searchFilesCount; $i++) {

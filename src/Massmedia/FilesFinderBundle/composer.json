@@ -1,5 +1,5 @@
 {
-    "name": "massmedia/massmedia.file_by_content_bundle",
+    "name": "massmedia/massmedia.files_finder_bundle",
     "type": "symfony-bundle",
     "autoload": {
         "psr-4": {
