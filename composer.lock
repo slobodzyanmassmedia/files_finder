@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "76c06cc56357c1f76556e2c5ba4ff28f",
-    "content-hash": "dfce84ba476173df998cba7b6563541c",
+    "hash": "055336039a8b817fe9bb3f3e7b9e52e2",
+    "content-hash": "34072e74f16f882b560e5e8752e8d964",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1231,6 +1231,38 @@
                 "xml"
             ],
             "time": "2015-11-10 12:26:42"
+        },
+        {
+            "name": "massmedia/files_finder_bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Daegon/files_finder_bundle.git",
+                "reference": "a971917805c593541ed13c503ac2a08a9e2b1f2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Daegon/files_finder_bundle/zipball/a971917805c593541ed13c503ac2a08a9e2b1f2d",
+                "reference": "a971917805c593541ed13c503ac2a08a9e2b1f2d",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/rest-bundle": "^1.7",
+                "jms/serializer-bundle": "^1.1",
+                "nelmio/api-doc-bundle": "^2.4",
+                "php": ">=5.3.9",
+                "symfony/console": "~2.1|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "willdurand/rest-extra-bundle": "^1.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Massmedia\\FilesFinderBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2016-03-04 10:02:55"
         },
         {
             "name": "michelf/php-markdown",
@@ -2918,7 +2950,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "massmedia/files_finder_bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

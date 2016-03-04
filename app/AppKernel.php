@@ -19,8 +19,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Massmedia\FilesFinderBundle\FilesFinderBundle(),
-            new Bazinga\Bundle\RestExtraBundle\BazingaRestExtraBundle(),
-            new AppBundle\AppBundle(),
+            new Bazinga\Bundle\RestExtraBundle\BazingaRestExtraBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
