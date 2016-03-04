@@ -1,10 +1,8 @@
 {
-    "name": "massmedia/massmedia.files_finder_bundle",
+    "name": "massmedia/files_finder_bundle",
     "type": "symfony-bundle",
     "autoload": {
-        "psr-4": {
-            "psr-4": { "Massmedia\\FilesFinderBundle\\": "" }
-        }
+        "psr-4": { "Massmedia\\FilesFinderBundle\\": "" }
     },
     "require": {
         "php": ">=5.3.9",
@@ -15,5 +13,6 @@
         "nelmio/api-doc-bundle": "^2.4",
         "willdurand/rest-extra-bundle": "^1.0"
 
-    }
+    },
+    "minimum-stability": "stable"
 }
