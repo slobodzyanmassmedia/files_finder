@@ -8,6 +8,10 @@ use FOS\RestBundle\Request\ParamFetcherInterface;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\RestBundle\Controller\Annotations;
 
+/**
+ * Class SearchController
+ * @package Massmedia\FilesFinderBundle\Api\Controller
+ */
 class SearchController extends Controller
 {
     /**
