@@ -1,33 +1,35 @@
 <?php
 
 namespace Massmedia\FilesFinderBundle\Services;
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Finder\Finder;
-use Symfony\Component\Finder\SplFileInfo;
 
 /**
  * Find file by content
  *
  * Class FilesFinder
- * @package AppBundle\Services
+ * @package Massmedia\FilesFinderBundle\Services
  */
 class FilesFinder
 {
+
     /**
-     * Search files in given directory by content
-     *
-     * @param $dir
-     * @param $text
-     * @return array
+     * @var FilesFinderInterface
      */
-    public function search($dir, $text) {
-        $finder = new Finder();
-        $files = $finder->files()->in($dir)->contains($text);
-        $founded = [];
-        foreach($files as $file) {
-            $founded[] = $file->getRealPath();
-        }
-        return $founded;
+    protected $finder;
+
+    /**
+     * @inheritdoc
+     */
+    public function search($dir, $text)
+    {
+        return $this->finder->search($dir, $text);
+    }
+
+    /**
+     * @param FilesFinderInterface $finder
+     */
+    public function setFinder(FilesFinderInterface $finder)
+    {
+        $this->finder = $finder;
     }
 
 }

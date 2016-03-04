@@ -1,4 +1,6 @@
 services:
+    massmedia.files_finder_configurator:
+        class: Massmedia\FilesFinderBundle\Services\FilesFinderConfigurator
     massmedia.files_finder:
         class: Massmedia\FilesFinderBundle\Services\FilesFinder
-        arguments: []
+        configurator: ['@massmedia.files_finder_configurator', configure]

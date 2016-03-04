@@ -5,10 +5,12 @@
     {{ form_widget(form.doSearch) }}
 {{ form_end(form) }}
 
-<div id="results">
-    {% for file in founded %}
-        <p>* {{ file }}</p>
-    {% else %}
-        <p id="no_files">No files have been found.</p>
-    {% endfor %}
-</div>
+{% if showResults %}
+    <ul id="results">
+        {% for file in founded %}
+            <li>{{ file }}</li>
+        {% else %}
+            <li id="no_files">No files have been found.</li>
+        {% endfor %}
+    </ul>
+{% endif %}

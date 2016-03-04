@@ -92,7 +92,7 @@ class FilesFinderServiceTest extends KernelTestCase
 
     public function testFindInNotExistsDir()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->setExpectedException('RuntimeException');
 
         $files = $this->filesFinder->search($this->tmpDir . '_wrong', $this->getPhrase());
     }
