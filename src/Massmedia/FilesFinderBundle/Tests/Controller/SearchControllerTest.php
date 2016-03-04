@@ -40,18 +40,16 @@ class SearchControllerTest extends WebTestCase
 
     public function testSearchResultFounded()
     {
-        $client = static::createClient();
-
         $foundedFileName = 'founded file name';
         $this->filesFinder->expects($this->once())->method('search')
             ->with($this->isType('string'), $this->equalTo($foundedFileName))
             ->will($this->returnValue([$foundedFileName]));
 
-        $client->getContainer()->set('massmedia.files_finder', $this->filesFinder);
-        $crawler = $client->request('POST', '/search', [
+        $this->client->getContainer()->set('massmedia.files_finder', $this->filesFinder);
+        $crawler = $this->client->request('POST', '/search', [
             'form' => [
                 'search' => $foundedFileName,
-                '_token' => $client->getContainer()->get('form.csrf_provider')->generateCsrfToken('form'),
+                '_token' => $this->client->getContainer()->get('form.csrf_provider')->generateCsrfToken('form'),
             ]
         ]);
 
@@ -60,18 +58,17 @@ class SearchControllerTest extends WebTestCase
 
     public function testSearchResultNoFounded()
     {
-        $client = static::createClient();
         $foundedFileName = 'founded file name';
 
         $this->filesFinder->expects($this->once())->method('search')
             ->with($this->isType('string'), $this->equalTo($foundedFileName))
             ->will($this->returnValue([]));
 
-        $client->getContainer()->set('massmedia.files_finder', $this->filesFinder);
-        $crawler = $client->request('POST', '/search', [
+        $this->client->getContainer()->set('massmedia.files_finder', $this->filesFinder);
+        $crawler = $this->client->request('POST', '/search', [
             'form' => [
                 'search' => $foundedFileName,
-                '_token' => $client->getContainer()->get('form.csrf_provider')->generateCsrfToken('form'),
+                '_token' => $this->client->getContainer()->get('form.csrf_provider')->generateCsrfToken('form'),
             ]
         ]);
 
