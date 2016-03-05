@@ -19,12 +19,15 @@ class FilesFinderConfigurator
      */
     public function configure(FilesFinder $filesFinder)
     {
-        switch (strtolower(PHP_OS)) {
-            case 'win':
-                $finder = new WindowsFilesFinder();
+        switch (true) {
+            // Case windows
+            case stristr(PHP_OS, 'WIN'):
+                $finder = new FindstrFilesFinder();
                 break;
-            case 'linux':
-                $finder = new LinuxFilesFinder();
+            // Case Linux or OSX
+            case stristr(PHP_OS, 'DAR'):
+            case stristr(PHP_OS, 'LINUX'):
+                $finder = new GrepFilesFinder();
                 break;
             default:
                 throw new \RuntimeException('Unknown operating system');

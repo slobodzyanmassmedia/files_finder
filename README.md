@@ -1,4 +1,4 @@
-file_by_content_bundle
-======================
+Project to test FilesFinderBundle
+=================================
 
-A Symfony project created on March 3, 2016, 4:54 pm.
+[Information and instructions to FilesFinderBundle](https://github.com/slobodzyanmassmedia/files_finder/tree/master/src/Massmedia/FilesFinderBundle/README.md)

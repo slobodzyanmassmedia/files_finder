@@ -3,12 +3,14 @@
 namespace Massmedia\FilesFinderBundle\Services;
 
 /**
- * Find files using Linux grep http://www.gnu.org/software/grep
+ * Find files using Linux and OSX grep
+ * OSX - http://www.gnu.org/software/grep
+ * Linux - https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/grep.1.html
  *
- * Class LinuxFilesFinder
+ * Class GrepFilesFinder
  * @package Massmedia\FilesFinderBundle\Services
  */
-class LinuxFilesFinder implements FilesFinderInterface
+class GrepFilesFinder implements FilesFinderInterface
 {
     /**
      * @inheritdoc
@@ -18,7 +20,7 @@ class LinuxFilesFinder implements FilesFinderInterface
         $text = addcslashes($text, '\'');
         $dir = addcslashes($dir, '\'');
 
-        // Execute linux "grep" command
+        // Execute "grep" command
         exec("grep -rl '$text' '$dir'", $results, $returnVar);
 
         if ($returnVar > 1) {

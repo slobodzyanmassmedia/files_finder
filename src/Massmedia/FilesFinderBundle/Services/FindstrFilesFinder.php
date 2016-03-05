@@ -5,10 +5,10 @@ namespace Massmedia\FilesFinderBundle\Services;
 /**
  * Find files using Windows findstr http://ss64.com/nt/findstr.html
  *
- * Class WindowsFilesFinder
+ * Class FindstrFilesFinder
  * @package Massmedia\FilesFinderBundle\Services
  */
-class WindowsFilesFinder implements FilesFinderInterface
+class FindstrFilesFinder implements FilesFinderInterface
 {
     /**
      * @inheritdoc
